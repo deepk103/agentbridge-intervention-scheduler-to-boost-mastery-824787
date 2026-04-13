@@ -1,0 +1,380 @@
+{
+  "id": "tpl-914213781",
+  "name": "Intervention Scheduler to boost mastery",
+  "description": "Intervention Scheduler to boost mastery summarizes assessments and flags content metadata; applies decision gates and observability; orchestrates via Analytics Lake to increase completion.",
+  "industry": "Education",
+  "pattern": "Reflection",
+  "complexity": "Intermediate",
+  "rating": 4.3,
+  "downloads": 24649,
+  "favorites": 3735,
+  "executionTime": "18 min",
+  "tags": [
+    "assessment",
+    "advising",
+    "sis",
+    "reflection",
+    "education"
+  ],
+  "steps": [
+    {
+      "id": "intake",
+      "name": "Module Intake",
+      "description": "Collect, validate and normalize attendance from Identity/SSO; attach a runId and timestamp for traceability."
+    },
+    {
+      "id": "draft-0",
+      "name": "Draft",
+      "description": "Execute draft phase for the Reflection pattern: persist interim state, enforce guardrails, and emit structured JSON results."
+    },
+    {
+      "id": "self-critique-1",
+      "name": "Self-Critique",
+      "description": "Execute self-critique phase for the Reflection pattern: persist interim state, enforce guardrails, and emit structured JSON results."
+    },
+    {
+      "id": "intervention-0",
+      "name": "Intervention",
+      "description": "Intervention across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "personalized-plan-1",
+      "name": "Personalized Plan",
+      "description": "Personalized Plan across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "progress-review-2",
+      "name": "Progress Review",
+      "description": "Progress Review across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "readiness-check-3",
+      "name": "Readiness Check",
+      "description": "Readiness Check across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "practice-recommendation-4",
+      "name": "Practice Recommendation",
+      "description": "Practice Recommendation across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability."
+    },
+    {
+      "id": "finalize",
+      "name": "Transcript Update",
+      "description": "Assemble final payload with status, artifacts, KPIs and audit trail; store to Identity/SSO; return response JSON for the client."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "intake",
+      "type": "agentbridge",
+      "data": {
+        "label": "Module Intake",
+        "description": "Collect, validate and normalize attendance from Identity/SSO; attach a runId and timestamp for traceability.",
+        "nodeType": "input",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 60,
+        "y": 120
+      }
+    },
+    {
+      "id": "draft-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Draft",
+        "description": "Execute draft phase for the Reflection pattern: persist interim state, enforce guardrails, and emit structured JSON results.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 310,
+        "y": 120
+      }
+    },
+    {
+      "id": "self-critique-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Self-Critique",
+        "description": "Execute self-critique phase for the Reflection pattern: persist interim state, enforce guardrails, and emit structured JSON results.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 560,
+        "y": 120
+      }
+    },
+    {
+      "id": "intervention-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "Intervention",
+        "description": "Intervention across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 810,
+        "y": 120
+      }
+    },
+    {
+      "id": "personalized-plan-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "Personalized Plan",
+        "description": "Personalized Plan across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1060,
+        "y": 120
+      }
+    },
+    {
+      "id": "progress-review-2",
+      "type": "agentbridge",
+      "data": {
+        "label": "Progress Review",
+        "description": "Progress Review across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1310,
+        "y": 120
+      }
+    },
+    {
+      "id": "readiness-check-3",
+      "type": "agentbridge",
+      "data": {
+        "label": "Readiness Check",
+        "description": "Readiness Check across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1560,
+        "y": 120
+      }
+    },
+    {
+      "id": "practice-recommendation-4",
+      "type": "agentbridge",
+      "data": {
+        "label": "Practice Recommendation",
+        "description": "Practice Recommendation across joined datasets; branch on thresholds using decision gates; write metrics (success/error counts) for observability.",
+        "nodeType": "llm",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 1810,
+        "y": 120
+      }
+    },
+    {
+      "id": "finalize",
+      "type": "agentbridge",
+      "data": {
+        "label": "Transcript Update",
+        "description": "Assemble final payload with status, artifacts, KPIs and audit trail; store to Identity/SSO; return response JSON for the client.",
+        "nodeType": "output",
+        "category": "ai-models",
+        "executionMode": "autonomous"
+      },
+      "position": {
+        "x": 2060,
+        "y": 120
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-0",
+      "source": "intake",
+      "target": "draft-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-1",
+      "source": "draft-0",
+      "target": "self-critique-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-2",
+      "source": "self-critique-1",
+      "target": "intervention-0",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-3",
+      "source": "intervention-0",
+      "target": "personalized-plan-1",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-4",
+      "source": "personalized-plan-1",
+      "target": "progress-review-2",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-5",
+      "source": "progress-review-2",
+      "target": "readiness-check-3",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-6",
+      "source": "readiness-check-3",
+      "target": "practice-recommendation-4",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    },
+    {
+      "id": "edge-7",
+      "source": "practice-recommendation-4",
+      "target": "finalize",
+      "type": "agentbridge",
+      "data": {
+        "label": "flow"
+      }
+    }
+  ],
+  "preview": "Module Intake → Draft → Self-Critique → Intervention → Personalized Plan → Progress Review → Readiness Check → Practice Recommendation → Transcript Update",
+  "featured": false,
+  "createdAt": "2025-10-24T21:10:43.644Z",
+  "author": "AgentBridge Team",
+  "deployments": 2491,
+  "lastDeployed": "2026-04-13T21:11:25.188Z",
+  "configuration": {
+    "provider": "aws",
+    "region": "us-west-2",
+    "compute": "gpu-single"
+  },
+  "healthStatus": "healthy",
+  "deploymentCount": 1237,
+  "githubRepo": "https://github.com/deepk103/agentbridge-intervention-scheduler-to-boost-mastery-664786",
+  "maintainer": "AgentBridge Team",
+  "agenticLayers": {
+    "reasoning": {
+      "modelType": "gpt-4o",
+      "reasoningPattern": "ReAct",
+      "contextWindow": 128000,
+      "memorySystem": "hybrid",
+      "decisionFramework": "Multi-Criteria Decision Analysis"
+    },
+    "orchestration": {
+      "workflowEngine": "n8n",
+      "coordinationPattern": "centralized",
+      "failoverStrategy": "retry",
+      "loadBalancing": "intelligent"
+    },
+    "protocol": {
+      "communicationProtocol": "MCP",
+      "messageFormat": "JSON",
+      "authenticationMethod": "OAuth2",
+      "encryptionStandard": "AES-256"
+    },
+    "governance": {
+      "policyEngine": "OPA",
+      "complianceStandards": [
+        "SOC2",
+        "GDPR"
+      ],
+      "auditTrail": true,
+      "riskAssessment": "medium",
+      "dataClassification": "internal"
+    },
+    "observability": {
+      "metricsCollection": "Prometheus",
+      "loggingFramework": "ELK",
+      "tracingSystem": "Jaeger",
+      "alertingRules": [],
+      "dashboardConfig": {
+        "layout": "grid",
+        "widgets": [
+          "metrics",
+          "logs",
+          "traces"
+        ],
+        "refreshInterval": 30
+      }
+    },
+    "intelligence": {
+      "learningCapability": "online",
+      "knowledgeBase": "vector-db",
+      "adaptationMechanism": "ml-based",
+      "performanceOptimization": "ai-driven"
+    }
+  },
+  "businessFunction": "data-preparation-node",
+  "autonomyLevel": "semi-autonomous",
+  "cognitiveCapabilities": [
+    {
+      "name": "Pattern Recognition",
+      "description": "Identifies patterns in business processes",
+      "confidenceLevel": 0.85,
+      "lastUpdated": "2026-04-13T21:10:43.751Z"
+    }
+  ],
+  "roiMetrics": {
+    "costSavings": 105118,
+    "timeReduction": 86,
+    "accuracyImprovement": 33,
+    "throughputIncrease": 28,
+    "errorReduction": 58
+  },
+  "complianceFramework": {
+    "standards": [
+      "SOC2",
+      "GDPR",
+      "ISO27001"
+    ],
+    "certifications": [
+      "SOC2 Type II"
+    ],
+    "auditFrequency": "monthly",
+    "lastAudit": "2026-03-27T12:51:07.420Z"
+  },
+  "scalingPolicy": {
+    "minInstances": 1,
+    "maxInstances": 10,
+    "scaleUpThreshold": 80,
+    "scaleDownThreshold": 20,
+    "cooldownPeriod": 300
+  }
+}
